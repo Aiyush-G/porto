@@ -7,8 +7,23 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.16",
+    "@headlessui/vue": "^1.4.3",
+    "@heroicons/vue": "^1.0.5",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tiptap/extension-bubble-menu": "^2.0.0-beta.54",
+    "@tiptap/extension-document": "^2.0.0-beta.15",
+    "@tiptap/extension-highlight": "^2.0.0-beta.32",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.46",
+    "@tiptap/extension-text-align": "^2.0.0-beta.29",
+    "@tiptap/html": "^2.0.0-beta.162",
+    "@tiptap/starter-kit": "^2.0.0-beta.171",
+    "@tiptap/vue-3": "^2.0.0-beta.88",
+    "animejs": "^3.2.1",
+    "tiptap-extensions": "^1.35.2",
+    "vue": "^3.2.27",
+    "vue-plugin-load-script": "^2.1.0",
     "vue-router": "^4.0.11",
+    "vue-typical": "^2.1.0",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
@@ -19,7 +34,7 @@
     "eslint-plugin-vue": "^7.19.1",
     "postcss": "^8.3.9",
     "prettier": "^2.4.1",
-    "sass": "^1.42.1",
+    "sass": "^1.48.0",
     "tailwindcss": "^2.2.16",
     "vite": "^2.6.4"
   },
