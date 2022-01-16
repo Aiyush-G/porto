@@ -3,6 +3,9 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import Document from '@tiptap/extension-document'
 import Placeholder from '@tiptap/extension-placeholder'
