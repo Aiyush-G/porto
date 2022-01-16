@@ -13,6 +13,8 @@ const stack = computed(() => {
 
 <template>
 
+    <Create />
+
     <nav class="relative flex items-center justify-center capitalize text-lg pt-24">
         <router-link class="inline pr-5" to="/" active-class="active">Home</router-link>
         <router-link class="inline" to="/about" active-class="active">About</router-link>
