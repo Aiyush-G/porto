@@ -1,8 +1,12 @@
 export default {
     state: () => ({ 
-        name: "Aiyush",
+        titleName: null,
      }),
-     mutations: {  },
+     mutations: { 
+         setName(state, value){
+             state.titleName = value
+         }
+      },
     actions: {  },
     getters: {  },
 

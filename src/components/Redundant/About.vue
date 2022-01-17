@@ -10,6 +10,9 @@ const stack = computed(() => {
 
 <template>
     <main class="p-24 text-center">
+
+        <p>{{ stack.cssFramework }}</p>
+        
         <p class="font-bold">
             JS Framework:
             <a href="https://v3.vuejs.org/" target="_blank" class="font-normal italic underline text-green-500">{{ stack.jsFramework.main }}</a>

@@ -1,10 +1,10 @@
 <template>
-  <editor-content :editor="editor" class="hover:drop-shadow-sm hover:animate-flash"/>
+  <editor-content :editor="editor" class="hover:drop-shadow-sm transition-all ease-in-out delay-150"/>
 </template>
 
 <script>
-import { computed } from 'vue'
-import { useStore } from 'vuex'
+import store from '../../store/index'
+// store.commit("setName", "Bob")
 
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import Document from '@tiptap/extension-document'
@@ -26,8 +26,15 @@ export default {
     }
   },
 
+  computed: {
+    builder: function(){
+        return store.state.builder
+    }
+  },
+
   mounted() {
     this.editor = new Editor({
+      
       extensions: [
         CustomDocument,
         
@@ -47,6 +54,12 @@ export default {
         }),
       ],
       content: '',
+
+      onUpdate({ editor }) {
+        // The content has changed.
+         store.commit("setName", editor.getText())
+
+      },
     })
 
     

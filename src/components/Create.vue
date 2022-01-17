@@ -1,19 +1,53 @@
 <script setup lang="js">
+    //import store from '../store/index'
+    //store.commit("setName", "Bob")
+
+    import store from '../store/index'
+
     import TEditor from './Helpers/TEditor.vue'
     import Header from './Helpers/Header.vue'
     import VTypical from 'vue-typical';
     import TitleTip from './Helpers/TitleTip.vue' 
     import Button from "./Helpers/Button.vue"
-    
+
     
     export default {
+
+        data(){
+            return{
+                titleError: false,
+            }
+        },
+
+        computed: {
+            builder: function(){
+                return store.state.builder
+            }
+        },
+
+        methods: {
+            titleErrorToggle: function(){
+                if (this.builder.titleName !== null) {
+                    console.log(this.builder.titleName)
+                }
+                else {
+                    console.log("title error")
+                    this.titleError = true      
+                }
+                
+            }
+        },
         components: {
             TEditor,
             Header,
             VTypical,
             TitleTip,
             Button,
-        }
+           
+        },
+
+
+        
     }
     
 </script>
@@ -21,13 +55,15 @@
 <template>
     <div class="p-4">
         <Header />
+        
+       
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Can use other max widths, This is the constrainted size -->
             <div class="max-w-3xl mx-auto">
                 <!-- <TEditor/> -->
                 <br>
-                <TitleTip/>
+                <TitleTip v-bind:class="{'animate-bounce': titleError}"/>
                 <br>
                 
                 <p>Porto is a 
@@ -66,7 +102,7 @@
                     </li>
                 </ul>
                 <br>
-                <Button isRed="true">Create Your First Portfolio</Button>           
+                <Button isRed="true" v-on:click="titleErrorToggle">Create Your First Portfolio</Button>           
                 <br>
                 <Button>Finished Examples</Button>  
                 <br>
